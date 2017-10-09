@@ -1,6 +1,4 @@
 // scripts.js
-
-
 $(function() {
 	function randomString() {
 		var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
@@ -20,10 +18,10 @@ $(function() {
 
 		function createColumn() {
 			var $column = $('<div>').addClass('column');
-			var $columnTitle = $('<h2>').addClass('colum-title').text(self.name);
-			var ColumnCardList = $('<ul>').addClass('colum-card-list');
-			var columDelete = $('<button>').addClass('btn-delete').text('x');
-			var columnAddCard = $('<button').addClass('add-card').text('Add a card');
+			var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
+			var $columnCardList = $('<ul>').addClass('column-card-list');
+			var $columnDelete = $('<button>').addClass('btn-delete').text('x');
+			var $columnAddCard = $('<button>').addClass('add-card').text('Add a card');
 
 			$columnDelete.click(function() {
 				self.removeColumn();
@@ -33,9 +31,9 @@ $(function() {
 			});
 
 			$column.append($columnTitle)
-			        .append($columnDelete)
-			        .append($columnAddCard)
-			        .append($columnCardList);
+			       .append($columnDelete)
+			       .append($columnAddCard)
+			       .append($columnCardList);
 			return $column;
 		}
 	}
@@ -48,9 +46,6 @@ $(function() {
 			this.$element.remove();
 		}
 	}
-
-	this.$element.children('ul').append(card.$element);
-	this.$element.remove()
 
 	function Card(description) {
 		var self = this;
@@ -92,6 +87,12 @@ $(function() {
     	$element: $('#board .column-container')
     };
 
+	$('.create-column')
+	  .click(function(){
+		var name = prompt('Enter a column name');
+		var column = new Column(name);
+	    	board.addColumn(column);
+	  });
 
 	function initSortable() {
 	   $('.column-card-list').sortable({
@@ -100,14 +101,6 @@ $(function() {
 	   }).disableSelection();
 	 }
 
-
-
-	 function initSortable() {
-    $('.column-card-list').sortable({
-      connectWith: '.column-card-list',
-      placeholder: 'card-placeholder'
-    }).disableSelection();
-  }
 
   // TWORZENIE KOLUMN
 var todoColumn = new Column('To do');

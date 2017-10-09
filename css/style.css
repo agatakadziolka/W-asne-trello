@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+body {
+	background: #21242E;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+
+}
+button {
+	color: #fff;
+	font-weight: 100;
+	background-color: #337ab7;
+    border-color: #2e6da4;
+}
+button.create-column {
+	margin: 0 auto;
+	display: block;
+	color: #fff;
+}
+.column-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+.column {
+	width: 300px;
+	margin: 0 auto;
+	background: #5A6378;
+	margin-top: 100px;
+}
+.column ul {
+	list-style: none;
+}
+.column ul .card {
+	background: #fff;
+	display: flex;
+	color: #000;
+	margin: 10px;
+	border-bottom: 2px solid #38DCC9;
+	position: relative;
+}
+.column-title {
+	color: #D9DBF1;
+}
+.column-card-list {
+	margin-top: 30px;
+}
+.card .btn-delete {
+	margin-right: 10px;
+	position: absolute;
+	left: -31px;
+}
+p {
+	margin: 5px 0 5px;
+	padding: 15px;
+	flex-wrap: wrap;
+}
+.card:hover {
+	border-radius: 0 0 40% 0 / 0 0 30% 0;
+	transition: all 250ms ease-out;
+}
